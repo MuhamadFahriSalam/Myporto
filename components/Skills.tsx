@@ -18,11 +18,11 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-slate-950 text-white py-24"
+      className="bg-white py-24"
     >
       <div className="max-w-7xl mx-auto px-8">
 
-        <h2 className="text-4xl font-bold text-blue-500 mb-12">
+        <h2 className="text-4xl font-bold text-blue-900 mb-12">
           Skills
         </h2>
 
@@ -31,7 +31,7 @@ export default function Skills() {
           {skills.map((skill) => (
             <div
               key={skill}
-              className="bg-slate-800 rounded-xl p-6 text-center shadow-lg hover:-translate-y-2 hover:bg-slate-700 duration-300"
+              className="bg-slate-50 rounded-2xl p-6 text-center shadow-md border border-slate-200 hover:-translate-y-2 hover:bg-blue-900 hover:text-white duration-300"
             >
               <h3 className="text-xl font-semibold">
                 {skill}

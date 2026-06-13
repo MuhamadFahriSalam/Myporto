@@ -1,6 +1,6 @@
 export default function Footer() {
   return (
-    <footer className="bg-slate-900 text-slate-400 py-6 text-center">
+    <footer className="bg-blue-900 text-white py-6 text-center">
       <p>
         © 2026 Muhamad Fahri Salam. All Rights Reserved.
       </p>
