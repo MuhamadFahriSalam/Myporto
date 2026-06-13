@@ -16,7 +16,7 @@ export default function Contact() {
 
           <div>
             <h3 className="text-2xl font-semibold text-slate-900 mb-5">
-              Mari Terhubung 🚀
+              Mari Terhubung
             </h3>
 
             <p className="text-slate-600 leading-8">
@@ -30,23 +30,23 @@ export default function Contact() {
 
             <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <FaEnvelope className="text-blue-900 text-2xl" />
-              <span className="text-slate-700">email@gmail.com</span>
+              <span className="text-slate-700">muhamadfahrisalam74@gmail.com</span>
             </div>
 
             <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <FaGithub className="text-blue-900 text-2xl" />
-              <span className="text-slate-700">github.com/username</span>
+              <span className="text-slate-700">github.com/MuhamadFahriSalam</span>
             </div>
 
             <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <FaLinkedin className="text-blue-900 text-2xl" />
-              <span className="text-slate-700">linkedin.com/in/username</span>
+              <span className="text-slate-700">linkedin.com/in/MuhamadFahriSalam</span>
             </div>
 
-            <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
+            {/* <div className="bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm flex items-center gap-4">
               <FaWhatsapp className="text-blue-900 text-2xl" />
               <span className="text-slate-700">08xxxxxxxxxx</span>
-            </div>
+            </div> */}
 
           </div>
 
