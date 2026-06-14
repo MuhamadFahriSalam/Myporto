@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import {
   Search,
   UserPlus,
@@ -34,6 +35,16 @@ export default function HumanResourceSystem() {
                 pelamar mulai dari publikasi lowongan hingga
                 monitoring status seleksi.
               </p>
+
+                {/* Button */}
+                <div className="flex gap-4 mt-8">
+                    <Link
+                    href="/"
+                    className="px-6 py-3 bg-blue-900 text-white rounded-xl font-medium shadow-md hover:bg-blue-800 transition"
+                    >
+                    ← Back to Home
+                    </Link>
+                </div>
             </div>
 
             <div>
@@ -52,6 +63,8 @@ export default function HumanResourceSystem() {
 
         </div>
       </section>
+
+
 
       {/* Overview */}
       <section className="bg-slate-50 py-24">
