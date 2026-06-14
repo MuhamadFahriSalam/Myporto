@@ -3,25 +3,25 @@ export default function Projects() {
   const projects = [
     {
       title: "Human Resource System",
-      // tech: "Laravel • Ionic • MySQL",
+      link: "/projects/human-resource-system",
       description:
         "Aplikasi pengelolaan karyawan dengan fitur autentikasi, absensi, dan manajemen data pegawai.",
     },
     {
       title: "CleanApp",
-      // tech: "Laravel • Mobile App",
+      link: "/projects/cleanapp",
       description:
         "Platform pelaporan dan pengelolaan kegiatan kebersihan lingkungan.",
     },
     {
-      title: "Bus Ticket Reservation System",
-      // tech: "PHP • MySQL",
+      title: "Form & Quiz System",
+      link: "/projects/foquz",
       description:
-        "Sistem pemesanan tiket bus berbasis web dengan fitur pemesanan dan pembayaran.",
+        "Sistem berbasis web yang dikembangkan untuk memfasilitasi pengisian formulir dan pelaksanaan quiz secara online, dilengkapi dengan fitur validasi data dan evaluasi hasil secara otomatis.",
     },
     {
       title: "YOLO Vehicle Detection",
-      // tech: "Python • YOLOv8",
+      link: "/projects/yolo-vehicle-detection",
       description:
         "Model deep learning untuk mendeteksi kendaraan pickup dan truck.",
     },
@@ -44,10 +44,6 @@ export default function Projects() {
               <h3 className="text-2xl font-semibold text-slate-900 mb-3">
                 {project.title}
               </h3>
-{/* 
-              <p className="text-blue-900 mb-4">
-                {project.tech}
-              </p> */}
 
               <p className="text-slate-600 leading-7">
                 {project.description}
@@ -56,8 +52,18 @@ export default function Projects() {
               {/* Tombol Detail */}
               <div className="flex gap-4 mt-6">
                 <Link
-                  href="/projects/human-resource-system"
-                  className="border border-blue-900 text-blue-900 px-5 py-2 rounded-xl hover:bg-blue-900 hover:text-white"
+                  href={project.link}
+                  className="
+                    border
+                    border-blue-900
+                    text-blue-900
+                    px-5
+                    py-2
+                    rounded-xl
+                    hover:bg-blue-900
+                    hover:text-white
+                    duration-300
+                  "
                 >
                   Detail Project
                 </Link>
