@@ -21,14 +21,14 @@ export default function Navbar() {
           </li>
 
           <li>
-            <a href="#skills" className="text-slate-700 hover:text-blue-900 duration-300">
-              Skills
-            </a>
-          </li>
-
-          <li>
             <a href="#projects" className="text-slate-700 hover:text-blue-900 duration-300">
               Projects
+            </a>
+          </li>
+          
+          <li>
+            <a href="#skills" className="text-slate-700 hover:text-blue-900 duration-300">
+              Skills
             </a>
           </li>
 
