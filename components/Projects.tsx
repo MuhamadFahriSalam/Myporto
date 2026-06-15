@@ -86,16 +86,18 @@ export default function Projects() {
               "
             >
               {/* Image */}
-              <div className="overflow-hidden">
+              <div className="overflow-hidden bg-slate-100">
                 <Image
                   src={project.image}
                   alt={project.title}
-                  width={700}
-                  height={400}
+                  width={1600}
+                  height={900}
+                  quality={100}
+                  sizes="320px"
                   className="
                     w-full
-                    h-40
-                    object-cover
+                    h-44
+                    object-contain
                     transition duration-700
                     group-hover:scale-105
                   "
@@ -127,16 +129,15 @@ export default function Projects() {
                 >
                   <div
                     className="
-                      w-9 h-9
+                      w-10 h-10
                       rounded-xl
                       bg-blue-600
                       text-white
                       flex
                       items-center
                       justify-center
-                      shadow-md
-                      transition-all
-                      duration-300
+                      shadow-lg
+                      transition-all duration-300
                       group-hover/link:translate-x-1
                     "
                   >
