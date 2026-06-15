@@ -19,8 +19,51 @@ export default function Hero() {
   };
 
   return (
-    <section className="min-h-screen bg-white flex items-center">
-      <div className="max-w-7xl mx-auto px-8">
+    <section className="
+        relative
+        min-h-screen
+        flex items-center
+        overflow-hidden
+
+        bg-gradient-to-br
+        from-slate-50
+        via-blue-50
+        to-cyan-50
+      ">
+      {/* Background Decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+
+        {/* Blur kiri atas */}
+        <div
+          className="
+            absolute
+            -top-40
+            -left-40
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-blue-300/20
+            blur-3xl
+          "
+        />
+
+        {/* Blur kanan bawah */}
+        <div
+          className="
+            absolute
+            bottom-0
+            right-0
+            w-[500px]
+            h-[500px]
+            rounded-full
+            bg-cyan-300/20
+            blur-3xl
+          "
+        />
+
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-8 z-10">
 
         <div className="grid md:grid-cols-2 items-center gap-16">
 
