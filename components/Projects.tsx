@@ -188,12 +188,10 @@ export default function Projects() {
                     Detail
                   </span>
                 </Link>
-
               </div>
             </motion.div>
           ))}
         </motion.div>
-
       </div>
     </section>
   );
