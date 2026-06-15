@@ -180,88 +180,89 @@ export default function FoQuz() {
         </div>
       </section>
 
-      {/* Application Screenshots */}
-      <section className="bg-slate-50 py-24">
-        <div className="max-w-6xl mx-auto px-8">
+    {/* Application Screenshots */}
+    <section className="bg-slate-50 py-24">
+      <div className="max-w-7xl mx-auto px-8">
 
-          <h2 className="text-4xl font-bold text-blue-900 mb-3">
-            Application Screenshots
-          </h2>
+        <h2 className="text-4xl font-bold text-blue-900 mb-3">
+          Application Screenshots
+        </h2>
 
-          <p className="text-slate-600 mb-10">
-            Several interfaces of the Form & Quiz System.
-          </p>
+        <p className="text-slate-600 mb-12">
+          Several interfaces of the Form & Quiz System developed for managing
+          forms, quizzes, and user participation.
+        </p>
 
-          <div className="grid lg:grid-cols-2 gap-6">
+        <div className="grid lg:grid-cols-2 gap-8">
 
-            {/* Landing Page */}
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-lg transition">
-              <Image
-                src="/images/foquz/hero-foquz.jpg"
-                alt="Landing Page"
-                width={1200}
-                height={700}
-                className="w-full h-64 object-cover"
-              />
+          {/* Landing Page */}
+          <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition">
+            <Image
+              src="/images/foquz/hero-foquz.jpg"
+              alt="Landing Page"
+              width={1200}
+              height={700}
+              className="w-full object-cover"
+            />
 
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  Landing Page
-                </h3>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                Landing Page
+              </h3>
 
-                <p className="text-slate-600 text-sm leading-7">
-                  Halaman utama yang memperkenalkan platform
-                  untuk pengelolaan form dan quiz.
-                </p>
-              </div>
+              <p className="text-slate-600 leading-7">
+                Halaman utama yang memperkenalkan platform Form & Quiz System
+                dengan tampilan modern dan responsif.
+              </p>
             </div>
+          </div>
 
-            {/* Dashboard */}
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-lg transition">
-              <Image
-                src="/images/foquz/pengisian-foquz.png"
-                alt="Dashboard"
-                width={1200}
-                height={700}
-                className="w-full h-64 object-cover"
-              />
+          {/* Admin Dashboard */}
+          <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition">
+            <Image
+              src="/images/foquz/dashboard-admin.png"
+              alt="Admin Dashboard"
+              width={1200}
+              height={700}
+              className="w-full object-cover"
+            />
 
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  User Dashboard
-                </h3>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                Admin Dashboard
+              </h3>
 
-                <p className="text-slate-600 text-sm leading-7">
-                  Dashboard yang menampilkan daftar form
-                  dan quiz yang tersedia.
-                </p>
-              </div>
+              <p className="text-slate-600 leading-7">
+                Dashboard administrator untuk membuat form baru,
+                mengelola quiz, dan memonitor aktivitas pengguna.
+              </p>
             </div>
+          </div>
 
-            {/* Form Page */}
-            <div className="bg-white rounded-2xl shadow-md overflow-hidden border border-slate-200 hover:shadow-lg transition">
-              <Image
-                src="/images/foquz/form.png"
-                alt="Form Page"
-                width={1200}
-                height={700}
-                className="w-full h-64 object-cover"
-              />
+          {/* User Dashboard */}
+          <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition">
+            <Image
+              src="/images/foquz/pengisian-foquz.png"
+              alt="User Dashboard"
+              width={1200}
+              height={700}
+              className="w-full object-cover"
+            />
 
-              <div className="p-5">
-                <h3 className="text-xl font-semibold text-slate-900 mb-2">
-                  Form Page
-                </h3>
+            <div className="p-6">
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">
+                User Dashboard
+              </h3>
 
-                <p className="text-slate-600 text-sm leading-7">
-                  Halaman pengisian form yang memungkinkan
-                  pengguna mengisi data secara terstruktur.
-                </p>
-              </div>
+              <p className="text-slate-600 leading-7">
+                Halaman pengguna untuk melihat form yang tersedia
+                dan melakukan pengisian secara online.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
+    </section>
     </>
   );
 }
