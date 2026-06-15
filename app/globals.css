@@ -34,3 +34,24 @@ body {
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
+
+@keyframes infinite-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.skills-slider {
+  width: max-content;
+  display: flex;
+  gap: 24px;
+  animation: infinite-scroll 25s linear infinite;
+}
+
+.skills-slider:hover {
+  animation-play-state: paused;
+}
