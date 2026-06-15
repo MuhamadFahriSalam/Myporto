@@ -1,7 +1,78 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function FoQuz() {
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+ 
+  const features = [
+    {
+      icon: "📝",
+      title: "Form Management",
+      description: "Create and manage digital forms.",
+    },
+    {
+      icon: "📋",
+      title: "Survey Management",
+      description: "Create surveys and collect responses.",
+    },
+    {
+      icon: "🧠",
+      title: "Quiz Management",
+      description: "Manage online quizzes and questions.",
+    },
+    {
+      icon: "👥",
+      title: "User Dashboard",
+      description: "Access forms and quizzes easily.",
+    },
+    {
+      icon: "📊",
+      title: "Result Monitoring",
+      description: "Monitor responses and quiz results.",
+    },
+    {
+      icon: "🔒",
+      title: "Authentication System",
+      description: "Secure access for users and administrators.",
+    },
+  ];
+
+  const screenshots = [
+    {
+      image: "/images/foquz/hero-foquz.jpg",
+      title: "Landing Page",
+      description:
+        "Halaman utama yang memperkenalkan platform Form & Quiz System dengan tampilan modern dan responsif.",
+    },
+    {
+      image: "/images/foquz/dashboard-admin.png",
+      title: "Admin Dashboard",
+      description:
+        "Dashboard administrator untuk membuat form baru, mengelola quiz, dan memonitor aktivitas pengguna.",
+    },
+    {
+      image: "/images/foquz/pengisian-foquz.png",
+      title: "User Dashboard",
+      description:
+        "Halaman pengguna untuk melihat form yang tersedia dan melakukan pengisian secara online.",
+    },
+  ];
+  
   return (
     <>
       {/* Hero */}
@@ -9,7 +80,12 @@ export default function FoQuz() {
         <div className="max-w-7xl mx-auto px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
 
-            <div>
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+            >
               <span className="bg-blue-100 text-blue-900 px-4 py-2 rounded-full font-medium">
                 Featured Project
               </span>
@@ -33,9 +109,22 @@ export default function FoQuz() {
                   ← Back to Home
                 </Link>
               </div>
-            </div>
+            </motion.div>
 
-            <div>
+              <motion.div
+                initial={{
+                  opacity: 0,
+                  x: 100,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  x: 0,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 1,
+                }}
+              >
               <Image
                 src="/images/foquz/hero-foquz.jpg"
                 alt="FoQuz"
@@ -43,226 +132,203 @@ export default function FoQuz() {
                 height={500}
                 className="rounded-3xl shadow-xl"
               />
-            </div>
-
+            </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Overview */}
-      <section className="bg-slate-50 py-24">
-        <div className="max-w-7xl mx-auto px-8">
+  {/* Overview */}
+  <section className="bg-slate-50 py-24">
+    <motion.div
+      className="max-w-7xl mx-auto px-8"
+      variants={fadeUp}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+    >
+      <h2 className="text-4xl font-bold text-blue-900 mb-10">
+        Project Overview
+      </h2>
 
-          <h2 className="text-4xl font-bold text-blue-900 mb-10">
-            Project Overview
-          </h2>
+      <p className="text-slate-600 leading-8">
+        Form & Quiz System merupakan sistem berbasis web yang
+        digunakan untuk membuat dan mengelola berbagai jenis
+        form, survey, dan quiz secara terpusat. Sistem ini
+        memudahkan pengguna dalam mengisi form dan membantu
+        administrator dalam mengelola data serta memonitor
+        hasil pengisian secara real-time.
+      </p>
+    </motion.div>
+  </section>
 
-          <p className="text-slate-600 leading-8">
-            Form & Quiz System merupakan sistem berbasis web yang
-            digunakan untuk membuat dan mengelola berbagai jenis
-            form, survey, dan quiz secara terpusat. Sistem ini
-            memudahkan pengguna dalam mengisi form dan membantu
-            administrator dalam mengelola data serta memonitor
-            hasil pengisian secara real-time.
-          </p>
+  {/* Features */}
+  <section className="bg-white py-24">
+    <div className="max-w-7xl mx-auto px-8">
 
-        </div>
-      </section>
+      <motion.h2
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="text-4xl font-bold text-blue-900 mb-12"
+      >
+        Main Features
+      </motion.h2>
 
-      {/* Features */}
-      <section className="bg-white py-24">
-        <div className="max-w-7xl mx-auto px-8">
+      <div className="grid md:grid-cols-2 gap-6">
 
-          <h2 className="text-4xl font-bold text-blue-900 mb-12">
-            Main Features
-          </h2>
+        {features.map((feature, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              y: 50,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.6,
+              delay: index * 0.1,
+            }}
+            className="
+              group
+              bg-slate-50
+              p-6
+              rounded-3xl
+              flex items-center gap-4
+              border border-slate-200
+              shadow-sm
 
-          <div className="grid md:grid-cols-2 gap-6">
+              hover:-translate-y-2
+              hover:bg-blue-50
+              hover:border-blue-200
+              hover:shadow-xl
 
-            <div className="bg-slate-50 p-6 rounded-3xl flex items-center gap-4 hover:shadow-lg transition">
-              <div className="bg-blue-100 p-3 rounded-2xl text-xl">
-                📝
-              </div>
+              transition-all duration-300
+            "
+          >
+            <div
+              className="
+                bg-blue-100
+                w-14 h-14
+                rounded-2xl
+                flex items-center justify-center
+                text-2xl
 
-              <div>
-                <h3 className="font-semibold text-slate-900">
-                  Form Management
-                </h3>
-
-                <p className="text-sm text-slate-500">
-                  Create and manage digital forms.
-                </p>
-              </div>
+                group-hover:scale-110
+                duration-300
+              "
+            >
+              {feature.icon}
             </div>
 
-            <div className="bg-slate-50 p-6 rounded-3xl flex items-center gap-4 hover:shadow-lg transition">
-              <div className="bg-blue-100 p-3 rounded-2xl text-xl">
-                📋
-              </div>
+            <div>
+              <h3 className="font-semibold text-slate-900 mb-1">
+                {feature.title}
+              </h3>
 
-              <div>
-                <h3 className="font-semibold text-slate-900">
-                  Survey Management
-                </h3>
-
-                <p className="text-sm text-slate-500">
-                  Create surveys and collect responses.
-                </p>
-              </div>
+              <p className="text-sm text-slate-500 leading-6">
+                {feature.description}
+              </p>
             </div>
 
-            <div className="bg-slate-50 p-6 rounded-3xl flex items-center gap-4 hover:shadow-lg transition">
-              <div className="bg-blue-100 p-3 rounded-2xl text-xl">
-                🧠
-              </div>
+          </motion.div>
+        ))}
 
-              <div>
-                <h3 className="font-semibold text-slate-900">
-                  Quiz Management
-                </h3>
+      </div>
+    </div>
+  </section>
 
-                <p className="text-sm text-slate-500">
-                  Manage online quizzes and questions.
-                </p>
-              </div>
-            </div>
+  {/* Application Pages */}
+  <section className="bg-slate-50 py-24">
+    <div className="max-w-7xl mx-auto px-8">
 
-            <div className="bg-slate-50 p-6 rounded-3xl flex items-center gap-4 hover:shadow-lg transition">
-              <div className="bg-blue-100 p-3 rounded-2xl text-xl">
-                👥
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-900">
-                  User Dashboard
-                </h3>
-
-                <p className="text-sm text-slate-500">
-                  Access forms and quizzes easily.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-3xl flex items-center gap-4 hover:shadow-lg transition">
-              <div className="bg-blue-100 p-3 rounded-2xl text-xl">
-                📊
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-900">
-                  Result Monitoring
-                </h3>
-
-                <p className="text-sm text-slate-500">
-                  Monitor responses and quiz results.
-                </p>
-              </div>
-            </div>
-
-            <div className="bg-slate-50 p-6 rounded-3xl flex items-center gap-4 hover:shadow-lg transition">
-              <div className="bg-blue-100 p-3 rounded-2xl text-xl">
-                🔒
-              </div>
-
-              <div>
-                <h3 className="font-semibold text-slate-900">
-                  Authentication System
-                </h3>
-
-                <p className="text-sm text-slate-500">
-                  Secure access for users and administrators.
-                </p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-      </section>
-
-    {/* Application Screenshots */}
-    <section className="bg-slate-50 py-24">
-      <div className="max-w-7xl mx-auto px-8">
-
+      <motion.div
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        className="mb-12"
+      >
         <h2 className="text-4xl font-bold text-blue-900 mb-3">
           Application Pages
         </h2>
 
-        <p className="text-slate-600 mb-12">
+        <p className="text-slate-600">
           Several interfaces of the Form & Quiz System developed for managing
           forms, quizzes, and user participation.
         </p>
+      </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8">
+      <div className="grid lg:grid-cols-2 gap-8">
 
-          {/* Landing Page */}
-          <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition">
-            <Image
-              src="/images/foquz/hero-foquz.jpg"
-              alt="Landing Page"
-              width={1200}
-              height={700}
-              className="w-full object-cover"
-            />
+        {screenshots.map((item, index) => (
+          <motion.div
+            key={index}
+            initial={{
+              opacity: 0,
+              y: 80,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+            }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.15,
+            }}
+            className="
+              group
+              bg-white
+              rounded-3xl
+              overflow-hidden
+              border border-slate-200
+              shadow-md
+
+              hover:-translate-y-2
+              hover:shadow-2xl
+
+              transition-all duration-500
+            "
+          >
+            <div className="overflow-hidden">
+              <Image
+                src={item.image}
+                alt={item.title}
+                width={1200}
+                height={700}
+                className="
+                  w-full
+                  object-cover
+                  transition duration-700
+                  group-hover:scale-105
+                "
+              />
+            </div>
 
             <div className="p-6">
+
               <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                Landing Page
+                {item.title}
               </h3>
 
               <p className="text-slate-600 leading-7">
-                Halaman utama yang memperkenalkan platform Form & Quiz System
-                dengan tampilan modern dan responsif.
+                {item.description}
               </p>
+
             </div>
-          </div>
 
-          {/* Admin Dashboard */}
-          <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition">
-            <Image
-              src="/images/foquz/dashboard-admin.png"
-              alt="Admin Dashboard"
-              width={1200}
-              height={700}
-              className="w-full object-cover"
-            />
+          </motion.div>
+        ))}
 
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                Admin Dashboard
-              </h3>
-
-              <p className="text-slate-600 leading-7">
-                Dashboard administrator untuk membuat form baru,
-                mengelola quiz, dan memonitor aktivitas pengguna.
-              </p>
-            </div>
-          </div>
-
-          {/* User Dashboard */}
-          <div className="bg-white rounded-3xl shadow-md overflow-hidden border border-slate-200 hover:shadow-xl transition">
-            <Image
-              src="/images/foquz/pengisian-foquz.png"
-              alt="User Dashboard"
-              width={1200}
-              height={700}
-              className="w-full object-cover"
-            />
-
-            <div className="p-6">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">
-                User Dashboard
-              </h3>
-
-              <p className="text-slate-600 leading-7">
-                Halaman pengguna untuk melihat form yang tersedia
-                dan melakukan pengisian secara online.
-              </p>
-            </div>
-          </div>
-        </div>
       </div>
-    </section>
+
+    </div>
+  </section>
     </>
   );
 }
