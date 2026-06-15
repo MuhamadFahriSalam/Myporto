@@ -1,6 +1,23 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 export default function Hero() {
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <section className="min-h-screen bg-white flex items-center">
       <div className="max-w-7xl mx-auto px-8">
@@ -10,45 +27,111 @@ export default function Hero() {
           {/* Kiri */}
           <div>
 
-            <p className="text-blue-900 text-lg font-medium mb-2">
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              className="text-blue-900 text-lg font-medium mb-2"
+            >
               Halo, saya
-            </p>
+            </motion.p>
 
-            <h1 className="text-6xl font-bold text-slate-900 mb-4">
+            <motion.h1
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-6xl font-bold text-slate-900 mb-4"
+            >
               Muhamad Fahri Salam
-            </h1>
+            </motion.h1>
 
-            <h2 className="text-3xl text-slate-600 mb-6">
+            <motion.h2
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-3xl text-slate-600 mb-6"
+            >
               Frontend Developer | Mobile Developer
-            </h2>
+            </motion.h2>
 
-            <p className="max-w-2xl text-slate-600 leading-8 mb-8">
+            <motion.p
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="max-w-2xl text-slate-600 leading-8 mb-8"
+            >
               Saya adalah mahasiswa Teknik Informatika yang tertarik pada
               pengembangan web, mobile, dan Artificial Intelligence.
               Saya memiliki pengalaman menggunakan Laravel, Ionic,
               Angular, Next.js, dan MySQL dalam membangun berbagai proyek.
-            </p>
+            </motion.p>
 
-            <div className="flex gap-5">
+            <motion.div
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="flex gap-5"
+            >
 
-              <button className="bg-blue-900 text-white px-6 py-3 rounded-xl hover:bg-blue-800 duration-300">
+              <button
+                className="
+                  bg-blue-900
+                  text-white
+                  px-6
+                  py-3
+                  rounded-xl
+                  hover:bg-blue-800
+                  duration-300
+                  hover:-translate-y-1
+                "
+              >
                 Download CV
               </button>
 
-              <button className="border-2 border-blue-900 text-blue-900 px-6 py-3 rounded-xl hover:bg-blue-900 hover:text-white duration-300">
+              <button
+                className="
+                  border-2
+                  border-blue-900
+                  text-blue-900
+                  px-6
+                  py-3
+                  rounded-xl
+                  hover:bg-blue-900
+                  hover:text-white
+                  duration-300
+                  hover:-translate-y-1
+                "
+              >
                 Hubungi Saya
               </button>
-            </div>
+
+            </motion.div>
+
           </div>
 
           {/* Kanan */}
-          <div className="flex justify-center">
+          <motion.div
+            initial={{ opacity: 0, x: 100 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1 }}
+            className="flex justify-center"
+          >
             <div className="relative">
 
               {/* Background Blur */}
               <div className="absolute -inset-6 bg-blue-200/20 rounded-[40px] blur-3xl"></div>
 
-              {/* Profile Image */}
+              {/* Foto */}
               <div className="relative overflow-hidden rounded-[32px] shadow-2xl border-4 border-white">
 
                 <Image
@@ -68,7 +151,7 @@ export default function Hero() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

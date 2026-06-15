@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Projects() {
   const projects = [
@@ -37,12 +40,32 @@ export default function Projects() {
     },
   ];
 
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
     <section id="projects" className="bg-slate-50 py-24">
       <div className="max-w-7xl mx-auto px-8">
 
         {/* Heading */}
-        <div className="mb-14">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
+          className="mb-14"
+        >
           <h2 className="text-5xl font-bold text-blue-900 mb-3">
             Projects
           </h2>
@@ -50,10 +73,14 @@ export default function Projects() {
           <p className="text-slate-500 text-lg">
             Some projects that I have developed.
           </p>
-        </div>
+        </motion.div>
 
         {/* Horizontal Scroll */}
-        <div
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeUp}
           className="
             flex
             gap-6
@@ -65,9 +92,22 @@ export default function Projects() {
             scrollbar-hide
           "
         >
-          {projects.map((project) => (
-            <div
+          {projects.map((project, index) => (
+            <motion.div
               key={project.title}
+              initial={{
+                opacity: 0,
+                y: 80,
+              }}
+              whileInView={{
+                opacity: 1,
+                y: 0,
+              }}
+              viewport={{ once: true }}
+              transition={{
+                duration: 0.7,
+                delay: index * 0.15,
+              }}
               className="
                 group
                 min-w-[280px]
@@ -148,10 +188,12 @@ export default function Projects() {
                     Detail
                   </span>
                 </Link>
+
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );

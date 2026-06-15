@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import {
   FaHtml5,
   FaCss3Alt,
@@ -73,12 +77,35 @@ export default function Skills() {
     },
   ];
 
+  const fadeUp = {
+    hidden: {
+      opacity: 0,
+      y: 60,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.8,
+      },
+    },
+  };
+
   return (
-    <section id="skills" className="bg-slate-50 py-24 overflow-hidden">
+    <section
+      id="skills"
+      className="bg-slate-50 py-24 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-8">
 
         {/* Heading */}
-        <div className="mb-12">
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="mb-12"
+        >
           <h2 className="text-5xl font-bold text-blue-900 mb-3">
             Skills
           </h2>
@@ -86,11 +113,16 @@ export default function Skills() {
           <p className="text-slate-500 text-lg">
             Technologies and tools that I frequently use.
           </p>
-        </div>
+        </motion.div>
 
         {/* Slider */}
-        <div className="relative py-5 overflow-hidden">
-
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          className="relative py-5 overflow-hidden"
+        >
           {/* Blur kiri */}
           <div className="absolute left-0 top-0 h-full w-28 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
 
@@ -100,8 +132,21 @@ export default function Skills() {
           <div className="flex w-max gap-6 animate-scroll hover:[animation-play-state:paused]">
 
             {[...skills, ...skills].map((skill, index) => (
-              <div
+              <motion.div
                 key={index}
+                initial={{
+                  opacity: 0,
+                  y: 40,
+                }}
+                whileInView={{
+                  opacity: 1,
+                  y: 0,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.03,
+                }}
                 className="
                   group
                   min-w-[160px]
@@ -118,14 +163,12 @@ export default function Skills() {
                   hover:border-blue-200
                   hover:shadow-2xl
 
-                  transition-all
-                  duration-300
+                  transition-all duration-300
                 "
               >
                 <div
                   className="
-                    transition
-                    duration-300
+                    transition duration-300
                     group-hover:scale-110
                   "
                 >
@@ -135,11 +178,11 @@ export default function Skills() {
                 <h3 className="text-lg font-semibold text-slate-700">
                   {skill.name}
                 </h3>
-              </div>
+              </motion.div>
             ))}
-
           </div>
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
