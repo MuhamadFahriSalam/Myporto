@@ -194,7 +194,7 @@ export default function CleanApp() {
         <div className="max-w-7xl mx-auto px-8">
 
           <h2 className="text-4xl font-bold text-green-700 mb-3">
-            Application Screenshots
+            Application Pages
           </h2>
 
           <p className="text-slate-600 mb-12">
