@@ -38,38 +38,38 @@ export default function Hero() {
               <button className="border-2 border-blue-900 text-blue-900 px-6 py-3 rounded-xl hover:bg-blue-900 hover:text-white duration-300">
                 Hubungi Saya
               </button>
-
             </div>
-
           </div>
 
           {/* Kanan */}
           <div className="flex justify-center">
-
             <div className="relative">
 
-              {/* Background lingkaran */}
-              <div className="absolute inset-0 bg-blue-100 rounded-full scale-110"></div>
+              {/* Background Blur */}
+              <div className="absolute -inset-6 bg-blue-200/20 rounded-[40px] blur-3xl"></div>
 
-              {/* Foto */}
-              <div className="relative w-80 h-80 rounded-full overflow-hidden shadow-2xl border-8 border-white">
+              {/* Profile Image */}
+              <div className="relative overflow-hidden rounded-[32px] shadow-2xl border-4 border-white">
 
                 <Image
-                  src="/images/profile.png"
+                  src="/images/profile2.jpg"
                   alt="Muhamad Fahri Salam"
-                  fill
-                  className="object-cover"
+                  width={430}
+                  height={620}
                   priority
+                  className="
+                    w-[320px]
+                    md:w-[420px]
+                    h-auto
+                    object-cover
+                    hover:scale-105
+                    duration-500
+                  "
                 />
-
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </section>
   );
