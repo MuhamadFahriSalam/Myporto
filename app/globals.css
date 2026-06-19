@@ -35,7 +35,7 @@ body {
   scrollbar-width: none;
 }
 
-@keyframes infinite-scroll {
+@keyframes scroll {
   from {
     transform: translateX(0);
   }
@@ -45,13 +45,6 @@ body {
   }
 }
 
-.skills-slider {
-  width: max-content;
-  display: flex;
-  gap: 24px;
-  animation: infinite-scroll 25s linear infinite;
-}
-
-.skills-slider:hover {
-  animation-play-state: paused;
+.animate-scroll {
+  animation: scroll 25s linear infinite;
 }

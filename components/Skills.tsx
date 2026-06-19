@@ -94,7 +94,15 @@ export default function Skills() {
   return (
     <section
       id="skills"
-      className="bg-slate-50 py-24 overflow-hidden"
+      className="
+        py-24
+        overflow-hidden
+
+        bg-gradient-to-br
+        from-slate-50
+        via-blue-50
+        to-slate-100
+      "
     >
       <div className="max-w-7xl mx-auto px-8">
 
@@ -124,38 +132,39 @@ export default function Skills() {
           className="relative py-5 overflow-hidden"
         >
           {/* Blur kiri */}
-          <div className="absolute left-0 top-0 h-full w-28 bg-gradient-to-r from-slate-50 to-transparent z-10"></div>
+          <div className="absolute left-0 top-0 h-full w-28 bg-gradient-to-r from-slate-50 via-slate-50/70 to-transparent z-10"></div>
 
           {/* Blur kanan */}
-          <div className="absolute right-0 top-0 h-full w-28 bg-gradient-to-l from-slate-50 to-transparent z-10"></div>
+          <div className="absolute right-0 top-0 h-full w-28 bg-gradient-to-l from-slate-50 via-slate-50/70 to-transparent z-10"></div>
 
-          <div className="flex w-max gap-6 animate-scroll hover:[animation-play-state:paused]">
-
-            {[...skills, ...skills].map((skill, index) => (
-              <motion.div
+          <div
+            className="
+              flex
+              items-center
+              gap-6
+              whitespace-nowrap
+              animate-scroll
+              will-change-transform
+              hover:[animation-play-state:paused]
+            "
+          >
+            {[...skills, ...skills, ...skills].map((skill, index) => (
+              <div
                 key={index}
-                initial={{
-                  opacity: 0,
-                  y: 40,
-                }}
-                whileInView={{
-                  opacity: 1,
-                  y: 0,
-                }}
-                viewport={{ once: true }}
-                transition={{
-                  duration: 0.5,
-                  delay: index * 0.03,
-                }}
                 className="
                   group
                   min-w-[160px]
-                  bg-white
+                  bg-white/80
+                  backdrop-blur-sm
                   rounded-3xl
                   border border-slate-200
                   p-7
-                  flex flex-col items-center
+
+                  flex
+                  flex-col
+                  items-center
                   gap-4
+
                   shadow-sm
 
                   hover:-translate-y-2
@@ -163,12 +172,14 @@ export default function Skills() {
                   hover:border-blue-200
                   hover:shadow-2xl
 
-                  transition-all duration-300
+                  transition-all
+                  duration-300
                 "
               >
                 <div
                   className="
-                    transition duration-300
+                    transition
+                    duration-300
                     group-hover:scale-110
                   "
                 >
@@ -178,11 +189,10 @@ export default function Skills() {
                 <h3 className="text-lg font-semibold text-slate-700">
                   {skill.name}
                 </h3>
-              </motion.div>
+              </div>
             ))}
           </div>
         </motion.div>
-
       </div>
     </section>
   );
