@@ -3,16 +3,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import {
-  Search,
-  UserPlus,
-  FileText,
-  BarChart3,
-  Brain,
-  Bell,
-} from "lucide-react";
 
-export default function HumanResourceSystem() {
+export default function CleanApp() {
     const fadeUp = {
     hidden: {
         opacity: 0,
@@ -26,160 +18,171 @@ export default function HumanResourceSystem() {
         },
     },
     };
-
     const features = [
     {
-        icon: "🔍",
-        title: "Search Job Vacancies",
-        description: "Browse available job positions.",
+        icon: "💰",
+        title: "CleanFund",
+        description: "Donation platform for environmental campaigns.",
     },
     {
-        icon: "📝",
-        title: "Candidate Registration",
-        description: "Register and create candidate accounts.",
+        icon: "🗺️",
+        title: "CleanUp",
+        description: "Manage and organize cleanup activities.",
     },
     {
-        icon: "📄",
-        title: "Upload Documents",
-        description: "Upload CV and supporting documents.",
+        icon: "🌱",
+        title: "CleanAct",
+        description: "Environmental action and awareness programs.",
     },
     {
-        icon: "📊",
-        title: "Recruitment Status Monitoring",
-        description: "Track recruitment progress in real time.",
+        icon: "📍",
+        title: "Campaign Mapping",
+        description: "View campaign locations through maps.",
     },
     {
-        icon: "🧠",
-        title: "Online Quiz",
-        description: "Conduct psychotest and online assessments.",
+        icon: "🙋",
+        title: "Volunteer Registration",
+        description: "Register volunteers for environmental activities.",
     },
     {
-        icon: "📧",
-        title: "Notification System",
-        description: "Receive recruitment updates automatically.",
+        icon: "📢",
+        title: "Campaign Submission",
+        description: "Submit and publish environmental campaigns.",
     },
     ];
 
     const screenshots = [
     {
-        image: "/images/hr/lowongan-user.png",
-        title: "Job Vacancy Page",
+        image: "/images/cleanapp/cleanfund.png",
+        title: "CleanFund",
         description:
-        "Halaman yang digunakan pelamar untuk melihat daftar lowongan, melakukan pencarian posisi, serta mengakses detail lowongan.",
+        "Fitur donasi yang memungkinkan pengguna memberikan kontribusi untuk mendukung kampanye lingkungan.",
     },
     {
-        image: "/images/hr/hero-hr.jpg",
-        title: "Landing Page",
+        image: "/images/cleanapp/cleanup.png",
+        title: "CleanUp",
         description:
-        "Halaman utama sistem recruitment yang menampilkan informasi perusahaan dan proses pendaftaran pelamar.",
+        "Menampilkan peta lokasi kampanye kebersihan yang dapat diikuti oleh masyarakat.",
     },
     {
-        image: "/images/hr/halaman-administrative.png",
-        title: "Administrative Selection",
+        image: "/images/cleanapp/cleanact.png",
+        title: "CleanAct",
         description:
-        "Dashboard HRD untuk melakukan seleksi administrasi terhadap kandidat yang melamar pekerjaan.",
+        "Halaman pendaftaran relawan untuk berpartisipasi dalam kegiatan pembersihan lingkungan.",
     },
     {
-        image: "/images/hr/pengerjaan-psychotes.png",
-        title: "Online Psychotest",
+        image: "/images/cleanapp/add-campaign.png",
+        title: "Add Campaign",
         description:
-        "Fitur psychotest online yang memungkinkan pelamar mengerjakan soal secara bertahap dengan batas waktu tertentu.",
+        "Form untuk membuat kampanye baru dan menentukan lokasi kegiatan kebersihan.",
     },
     ];
-
   return (
     <>
-      {/* Hero */}
-      <section className="bg-white pt-32 pb-20">
+    {/* Hero */}
+    <section className="bg-white pt-32 pb-20">
         <div className="max-w-7xl mx-auto px-8">
 
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
 
+            {/* Left */}
             <motion.div
+                variants={fadeUp}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+            >
+
+                <span className="bg-green-100 text-green-700 px-4 py-2 rounded-full font-medium">
+                Featured Project
+                </span>
+
+                <h1 className="text-5xl font-bold text-slate-900 mt-6 mb-5">
+                CleanApp
+                </h1>
+
+                <p className="text-slate-600 leading-8">
+                CleanApp merupakan platform berbasis web yang bertujuan
+                untuk meningkatkan kepedulian masyarakat terhadap
+                lingkungan melalui fitur donasi, kampanye kebersihan,
+                dan kegiatan relawan.
+                </p>
+
+                <div className="mt-8">
+                <Link
+                    href="/"
+                    className="
+                    px-6 py-3
+                    bg-green-700
+                    text-white
+                    rounded-xl
+                    font-medium
+                    shadow-md
+                    hover:bg-green-600
+                    transition
+                    "
+                >
+                    ← Back to Home
+                </Link>
+                </div>
+
+            </motion.div>
+
+            {/* Right */}
+            <motion.div
+                initial={{
+                opacity: 0,
+                x: 100,
+                }}
+                whileInView={{
+                opacity: 1,
+                x: 0,
+                }}
+                viewport={{ once: true }}
+                transition={{
+                duration: 1,
+                }}
+            >
+                <Image
+                src="/images/cleanapp/cleanup.png"
+                alt="CleanApp"
+                width={800}
+                height={500}
+                className="rounded-3xl shadow-xl"
+                />
+            </motion.div>
+
+            </div>
+
+        </div>
+    </section>
+
+    {/* Overview */}
+    <section className="bg-slate-50 py-24">
+        <motion.div
+            className="max-w-7xl mx-auto px-8"
             variants={fadeUp}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            >
-
-              <span className="bg-blue-100 text-blue-900 px-4 py-2 rounded-full font-medium">
-                Featured Project
-              </span>
-
-              <h1 className="text-5xl font-bold text-slate-900 mt-6 mb-5">
-                Human Resource System
-              </h1>
-
-              <p className="text-slate-600 leading-8">
-                Sistem recruitment berbasis web yang dikembangkan
-                selama kegiatan magang di PT AISIN Indonesia
-                Automotive. Sistem ini membantu proses perekrutan
-                pelamar mulai dari publikasi lowongan hingga
-                monitoring status seleksi.
-              </p>
-
-                {/* Button */}
-                <div className="flex gap-4 mt-8">
-                    <Link
-                    href="/"
-                    className="px-6 py-3 bg-blue-900 text-white rounded-xl font-medium shadow-md hover:bg-blue-800 transition"
-                    >
-                    ← Back to Home
-                    </Link>
-                </div>
-            </motion.div>
-
-            <motion.div
-            initial={{ opacity: 0, x: 100 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-            >
-
-              <Image
-                src="/images/hr/hero-hr.jpg"
-                alt="Human Resource System"
-                width={800}
-                height={500}
-                className="rounded-3xl shadow-xl"
-              />
-
-            </motion.div>
-
-          </div>
-
-        </div>
-      </section>
-
-
-
-      {/* Overview */}
-      <section className="bg-slate-50 py-24">
-        <motion.div
-        className="max-w-7xl mx-auto px-8"
-        variants={fadeUp}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
         >
 
-          <h2 className="text-4xl font-bold text-blue-900 mb-10">
+            <h2 className="text-4xl font-bold text-green-700 mb-10">
             Project Overview
-          </h2>
+            </h2>
 
-          <p className="text-slate-600 leading-8">
-            Human Resource System merupakan sistem recruitment
-            berbasis web yang bertujuan untuk mempermudah
-            proses seleksi calon karyawan. Sistem menyediakan
-            fitur pencarian lowongan, registrasi pelamar,
-            upload dokumen, pelaksanaan quiz online,
-            dan monitoring status seleksi secara real-time.
-          </p>
+            <p className="text-slate-600 leading-8">
+            CleanApp merupakan aplikasi yang dikembangkan untuk
+            mendukung kegiatan pelestarian lingkungan. Sistem
+            menyediakan fitur donasi, pengajuan kampanye,
+            pemetaan lokasi kegiatan, serta perekrutan relawan
+            untuk berpartisipasi dalam aksi kebersihan.
+            </p>
 
         </motion.div>
-      </section>
+    </section>
 
-    {/* Features */}
+    {/* Main Features */}
     <section className="bg-white py-24">
         <div className="max-w-7xl mx-auto px-8">
 
@@ -188,7 +191,7 @@ export default function HumanResourceSystem() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
-            className="text-4xl font-bold text-blue-900 mb-12"
+            className="text-4xl font-bold text-green-700 mb-12"
             >
             Main Features
             </motion.h2>
@@ -216,25 +219,22 @@ export default function HumanResourceSystem() {
                     bg-slate-50
                     p-6
                     rounded-3xl
-                    flex items-center
-                    gap-4
+                    flex items-center gap-4
                     border border-slate-200
                     shadow-sm
 
                     hover:-translate-y-2
-                    hover:bg-blue-50
-                    hover:border-blue-200
+                    hover:bg-green-50
+                    hover:border-green-200
                     hover:shadow-xl
 
                     transition-all duration-300
                 "
                 >
-                {/* Icon */}
                 <div
                     className="
-                    bg-blue-100
-                    w-14
-                    h-14
+                    bg-green-100
+                    w-14 h-14
                     rounded-2xl
                     flex items-center justify-center
                     text-2xl
@@ -246,7 +246,6 @@ export default function HumanResourceSystem() {
                     {feature.icon}
                 </div>
 
-                {/* Content */}
                 <div>
                     <h3 className="font-semibold text-slate-900 mb-1">
                     {feature.title}
@@ -256,13 +255,15 @@ export default function HumanResourceSystem() {
                     {feature.description}
                     </p>
                 </div>
+
                 </motion.div>
             ))}
+
             </div>
         </div>
     </section>
 
-    {/* Application Screenshots */}
+    {/* Application Pages */}
     <section className="bg-slate-50 py-24">
         <div className="max-w-7xl mx-auto px-8">
 
@@ -273,16 +274,16 @@ export default function HumanResourceSystem() {
             viewport={{ once: true }}
             className="mb-12"
             >
-            <h2 className="text-4xl font-bold text-blue-900 mb-3">
+            <h2 className="text-4xl font-bold text-green-700 mb-3">
                 Application Pages
             </h2>
 
             <p className="text-slate-600">
-                Several interfaces of the Human Resource System developed during the internship.
+                Several interfaces from the CleanApp platform.
             </p>
             </motion.div>
 
-            <div className="grid lg:grid-cols-2 gap-10">
+            <div className="grid lg:grid-cols-2 gap-8">
 
             {screenshots.map((item, index) => (
                 <motion.div
@@ -306,7 +307,7 @@ export default function HumanResourceSystem() {
                     rounded-3xl
                     overflow-hidden
                     border border-slate-200
-                    shadow-lg
+                    shadow-md
 
                     hover:-translate-y-2
                     hover:shadow-2xl
@@ -314,7 +315,6 @@ export default function HumanResourceSystem() {
                     transition-all duration-500
                 "
                 >
-                {/* Image */}
                 <div className="overflow-hidden">
                     <Image
                     src={item.image}
@@ -330,20 +330,23 @@ export default function HumanResourceSystem() {
                     />
                 </div>
 
-                {/* Content */}
                 <div className="p-6">
 
-                    <h3 className="text-2xl font-semibold text-slate-900 mb-3">
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">
                     {item.title}
                     </h3>
 
                     <p className="text-slate-600 leading-7">
                     {item.description}
                     </p>
+
                 </div>
+
                 </motion.div>
             ))}
+
             </div>
+
         </div>
     </section>
     </>
