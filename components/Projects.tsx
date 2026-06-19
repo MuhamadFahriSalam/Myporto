@@ -30,14 +30,14 @@ export default function Projects() {
       description:
         "Sistem berbasis web yang dikembangkan untuk memfasilitasi pengisian formulir dan pelaksanaan quiz secara online.",
     },
-    {
-      title: "YOLO Vehicle Detection",
-      category: "Deep Learning",
-      image: "/images/yolo/yolo.jpg",
-      link: "/projects/yolo-vehicle-detection",
-      description:
-        "Model deep learning untuk mendeteksi kendaraan pickup dan truck.",
-    },
+    // {
+    //   title: "YOLO Vehicle Detection",
+    //   category: "Deep Learning",
+    //   image: "/images/yolo/yolo.jpg",
+    //   link: "/projects/yolo-vehicle-detection",
+    //   description:
+    //     "Model deep learning untuk mendeteksi kendaraan pickup dan truck.",
+    // },
   ];
 
   const fadeUp = {

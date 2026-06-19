@@ -25,6 +25,12 @@ export default function Navbar() {
               Projects
             </a>
           </li>
+
+          <li>
+            <a href="#certificates" className="text-slate-700 hover:text-blue-900 duration-300">
+              Certificates
+            </a>
+          </li>
           
           <li>
             <a href="#skills" className="text-slate-700 hover:text-blue-900 duration-300">
